@@ -5,38 +5,42 @@ public class Statment {
     private static StatmentType getStatmenType(String[] token) {
         switch (token[1]) {
             case "if":
-
-                break;
+                return StatmentType.IF;
             case "for":
-                break;
-            case "EXPRESSION":
-                break;
-            case "d":
-                break;
+                return StatmentType.FOR;
+            case "Identifier":
+                return StatmentType.ASSIGNMENT;
+            case "datatype":
+                return StatmentType.DECLERATION;
 
             default:
-                break;
+                return StatmentType.NONE;
         }
-        return StatmentType.IF;
     }
 
     public static void statment(String[] token) {
 
         switch (getStatmenType(token)) {
             case IF:
+                IF.ifStatment();
 
                 break;
             case FOR:
                 break;
-            case EXPRESSION:
+            case ASSIGNMENT:
 
             default:
                 break;
         }
     }
 
+    static boolean checkStartofStatment(String[] token) {
+
+        return getStatmenType(token) == StatmentType.NONE ? false : true;
+    }
+
     enum StatmentType {
-        IF, FOR, EXPRESSION, DECLERATION, Equation
+        IF, FOR, ASSIGNMENT, DECLERATION, NONE // false statment
     }
 }
 

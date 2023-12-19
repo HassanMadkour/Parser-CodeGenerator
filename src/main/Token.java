@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Token {
-    static int indexofToken = 0;
+    static int indexofToken = -1;
     static List<String[]> tokens;
 
     public static List<String[]> convertTheFiletoList(File file) {
