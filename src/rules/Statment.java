@@ -2,8 +2,8 @@ package rules;
 
 public class Statment {
 
-    private static StatmentType getStatmenType(String token) {
-        switch (token) {
+    private static StatmentType getStatmenType(String[] token) {
+        switch (token[1]) {
             case "if":
 
                 break;
@@ -20,7 +20,7 @@ public class Statment {
         return StatmentType.IF;
     }
 
-    public static void statment(String token) {
+    public static void statment(String[] token) {
 
         switch (getStatmenType(token)) {
             case IF:
@@ -36,7 +36,7 @@ public class Statment {
     }
 
     enum StatmentType {
-        IF, FOR, EXPRESSION, DECLERATION
+        IF, FOR, EXPRESSION, DECLERATION, Equation
     }
 }
 

@@ -10,22 +10,25 @@ import java.util.List;
 
 public class Token {
     static int indexofToken = 0;
-    static List<String> tokens;
+    static List<String[]> tokens;
 
-    public static List<String> convertTheFiletoList(File file) {
+    public static List<String[]> convertTheFiletoList(File file) {
 
         try {
-            List<String> tokens = new ArrayList<>();
-            String token;
+            List<String[]> tokenList = new ArrayList<>();
 
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-
-            while ((token = bufferedReader.readLine()) != null) {
-                tokens.add(token);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] words = line.split("\\s+");
+                if (words[1] == "Keyword") {
+                    words[1] = typeOFKeyword(words[0]);
+                }
+                tokenList.add(words);
             }
             bufferedReader.close();
-            return tokens;
+            return tokenList;
         } catch (FileNotFoundException e) {
             System.err.println("Can not find the file");
         } catch (IOException e) {
@@ -36,9 +39,17 @@ public class Token {
 
     }
 
-    public static String getNextToken(){
+    private static String typeOFKeyword(String keyword) {
+        String[] keywords = { "if", "for" };
+        for (int i = 0; i < keywords.length; i++)
+            if (keyword == keywords[i])
+                return keywords[i];
+        return "datatype";
+    }
 
-        return 
+    public static String[] getNextToken() {
+        indexofToken++;
+        return tokens.get(indexofToken);
     }
 
 }
