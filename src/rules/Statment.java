@@ -9,7 +9,7 @@ public class Statment {
             case "for":
                 return StatmentType.FOR;
             case "Identifier":
-                return StatmentType.ASSIGNMENT;
+                return ExpressionParser.isValidExpression();
             case "datatype":
                 return StatmentType.DECLERATION;
 
