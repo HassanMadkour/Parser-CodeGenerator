@@ -49,6 +49,8 @@ for Keyword
 ( Special Character
 int Keyword
 x Identifier
+= Operator
+5 Numeric Constant
 ; Special Character
 x Identifier
 < Operator

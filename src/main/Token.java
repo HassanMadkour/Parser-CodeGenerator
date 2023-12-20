@@ -63,4 +63,9 @@ public class Token {
         return tokens.get(indexofToken - 1);
     }
 
+    public static void decrementIndex() {
+        indexofToken--;
+
+    }
+
 }

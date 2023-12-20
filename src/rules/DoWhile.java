@@ -6,6 +6,9 @@ public class DoWhile {
     public static boolean doWhileStatment() {
         if (Token.getNextToken()[0].equals("{")) {
             Statment.statment(Token.getNextToken());
+            if (!Statment.vaildation()) {
+                return false;
+            }
             if (Token.getNextToken()[0].equals("}")) {
                 if (Token.getNextToken()[0].equals("while")) {
 
@@ -20,33 +23,33 @@ public class DoWhile {
 
                                 }
                             } else {
-                                System.err.println(") not exist");
+                                System.err.println("do ) not exist");
                                 return false;
 
                             }
 
                         } else {
-                            System.err.println("( error in condition");
+                            System.err.println("do ( error in condition");
                             return false;
 
                         }
                     } else {
-                        System.err.println("( not exist");
+                        System.err.println("do  ( not exist");
                         return false;
 
                     }
                 } else {
-                    System.err.println("while not exist");
+                    System.err.println("do while not exist");
                     return false;
 
                 }
             } else {
-                System.err.println("} not exist");
+                System.err.println("do } not exist");
                 return false;
 
             }
         } else {
-            System.err.println("{ not exist");
+            System.err.println("do { not exist");
             return false;
 
         }

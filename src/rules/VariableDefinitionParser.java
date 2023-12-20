@@ -10,11 +10,11 @@ class VariableDefinitionParser {
     }
 
     private static boolean parseIdentifier() {
-        String token = Token.getNextToken()[1];
-        if (token.matches("Identifier")) {
+        String[] token = Token.getNextToken();
+        if (token[1].matches("Identifier")) {
             return true;
         } else {
-            System.out.println("Error: Expected an identifier but found " + Token.getNextToken()[0]);
+            System.out.println("Error:22222 Expected an identifier but found " + token[0]);
             return false;
         }
     }
@@ -33,11 +33,11 @@ class VariableDefinitionParser {
     }
 
     private static boolean parseNumber() {
-        String token = Token.getNextToken()[1];
-        if (token.matches("Numeric")) {
+        String[] token = Token.getNextToken();
+        if (token[1].matches("Numeric")) {
             return true;
         } else {
-            System.out.println("Error: Expected a numeric value but found " + Token.getNextToken()[0]);
+            System.out.println("Error:1111111111111 Expected a numeric value but found " + token[0]);
             return false;
         }
 
@@ -50,9 +50,9 @@ class VariableDefinitionParser {
         } else {
             // Check if it's the end of input
             if (token.isEmpty()) {
-                System.out.println("Error: Expected '" + expected + "' but found end of input");
+                System.out.println("Error:5555555 Expected '" + expected + "' but found end of input");
             } else {
-                System.out.println("Error: Expected '" + expected + "' but found '" + token + "'");
+                System.out.println("Error:4444445 Expected '" + expected + "' but found '" + token + "'");
             }
             return false;
         }

@@ -17,21 +17,21 @@ class ExpressionParser {
     }
 
     private static boolean parseIdentifier() {
-        String token = Token.getNextToken()[1];
-        if (token.matches("Identifier")) {
+        String[] token = Token.getNextToken();
+        if (token[1].matches("Identifier")) {
             return true;
         } else {
-            System.out.println("Error: Expected an identifier but found " + Token.getNextToken()[0]);
+            System.out.println("Error: Expected an identifier but found " + token[0]);
             return false;
         }
     }
 
     private static boolean parseNumber() {
-        String token = Token.getNextToken()[1];
-        if (token.matches("Numeric")) {
+        String[] token = Token.getNextToken();
+        if (token[1].matches("Numeric")) {
             return true;
         } else {
-            System.out.println("Error: Expected a numeric value but found " + Token.getNextToken()[0]);
+            System.out.println("Error: Expected a numeric value but found " + token[0]);
             return false;
         }
 

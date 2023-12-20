@@ -14,7 +14,7 @@ class ConditionParser {
         if (token.matches("Identifier")) {
             return true;
         } else {
-            System.out.println("Error: Expected an identifier but found " + Token.getNextToken()[0]);
+            System.out.println("Error:sa56as Expected an identifier but found " + Token.getNextToken()[0]);
             return false;
         }
     }

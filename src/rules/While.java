@@ -8,33 +8,36 @@ public class While {
 
         if (Token.getNextToken()[0].equals("(")) {
             if (ConditionParser.isCondition()) {
-                if (Token.getNextToken()[0] == ")") {
-                    if (Token.getNextToken()[0] == "{") {
+                if (Token.getNextToken()[0].equals(")")) {
+                    if (Token.getNextToken()[0].equals("{")) {
                         Statment.statment(Token.getNextToken());
-                        if (Token.getNextToken()[0] == "}") {
+                        if (!Statment.vaildation()) {
+                            return false;
+                        }
+                        if (Token.getNextToken()[0].equals("}")) {
 
                             return true;
                         } else {
-                            System.err.println("} not exist");
+                            System.err.println("while } not exist");
                             return false;
                         }
                     } else {
-                        System.err.println("{ not exist");
+                        System.err.println("while { not exist");
                         return false;
 
                     }
                 } else {
-                    System.err.println(") not exist");
+                    System.err.println("while ) not exist");
                     return false;
 
                 }
             } else {
-                System.err.println(" cond error");
+                System.err.println("while cond error");
                 return false;
 
             }
         } else {
-            System.err.println(" ( not exist");
+            System.err.println("while  ( not exist");
             return false;
 
         }

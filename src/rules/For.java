@@ -5,30 +5,35 @@ import main.Token;
 public class For {
     public static boolean forStatment() {
         if (Token.getNextToken()[0].equals("(")) {
-            if (ExpressionParser.isValidExpression(false) || VariableDefinitionParser.isValidVariableDefinition()) {
+            String c = Token.getNextToken()[0]; // to avoid DataType
+            if (VariableDefinitionParser.isValidVariableDefinition()) {
                 if (ConditionParser.isCondition()) {
                     if (Token.getNextToken()[0].equals(";")) {
+                        String w = Token.getNextToken()[0]; // to avoid DataType
                         if (ExpressionParser.isValidExpression(true)) {
                             if (Token.getNextToken()[0].equals(")")) {
                                 if (Token.getNextToken()[0].equals("{")) {
                                     Statment.statment(Token.getNextToken());
+                                    if (!Statment.vaildation()) {
+                                        return false;
+                                    }
                                     if (Token.getNextToken()[0].equals("}")) {
                                         // end of for
                                         return true;
                                     } else {
 
-                                        System.err.println("Prehaps '}' non-exist");
+                                        System.err.println("assa Prehaps '}' non-exist");
                                         return false;
 
                                     }
 
                                 } else {
-                                    System.err.println("Prehaps '{' non-exist");
+                                    System.err.println(" Prehaps '{' non-exist");
                                     return false;
 
                                 }
                             } else {
-                                System.err.println("Prehaps ')' non-exist ");
+                                System.err.println(" Prehaps ')' non-exist ");
                                 return false;
 
                             }
@@ -56,7 +61,7 @@ public class For {
             }
 
         } else {
-            System.err.println("Prehaps '(' non-exist ");
+            System.err.println("as Prehaps '(' non-exist ");
             return false;
 
         }

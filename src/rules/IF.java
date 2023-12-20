@@ -20,6 +20,9 @@ public class IF {
                             if (Token.getNextToken()[0].equals("else")) {
                                 if (Token.getNextToken()[0].equals("{")) {
                                     Statment.statment(Token.getNextToken());
+                                    if (!Statment.vaildation()) {
+                                        return false;
+                                    }
                                     if (Token.getNextToken()[0].equals("}")) {
                                         // end of if statment
                                         return true;
@@ -32,6 +35,7 @@ public class IF {
                                 }
                             } // end of else
                               // end of if
+                            Token.decrementIndex();
                             return true;
 
                         } else {
