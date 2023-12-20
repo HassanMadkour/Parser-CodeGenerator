@@ -1,4 +1,6 @@
+package rules;
 
+import main.Token;
 
 class ConditionParser {
     
