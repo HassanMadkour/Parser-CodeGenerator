@@ -31,10 +31,8 @@ class ConditionParser {
     }
 
     private static boolean parseConditionalExpression() {
-        String token = Token.getNextToken()[0]
+        String token = Token.getNextToken()[0];
         return token.equals("==") || token.equals("<") || token.equals(">") || token.equals("!=");
     }
-
-    
 
 }
