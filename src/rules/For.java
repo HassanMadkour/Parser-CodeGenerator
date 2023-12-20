@@ -5,11 +5,11 @@ import main.Token;
 public class For {
     public static void forStatment() {
         if (Token.getNextToken()[0] == "(") {
-            if (ExpressionParser.isValidExpression()// Decleration
+            if (ExpressionParser.isValidExpression(false)// Decleration
             ) {
                 if (ConditionParser.isCondition()) {
                     if (Token.getNextToken()[0].equals(";")) {
-                        if (ExpressionParser.isValidExpression()) {
+                        if (ExpressionParser.isValidExpression(true)) {
                             if (Token.getNextToken()[0].equals(")")) {
                                 if (Token.getNextToken()[0].equals("{")) {
                                     Statment.statment(Token.getNextToken());
