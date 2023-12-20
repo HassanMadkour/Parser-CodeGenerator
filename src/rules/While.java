@@ -7,8 +7,7 @@ public class While {
     public static void whilestatement() {
 
         if (Token.getNextToken()[0].equals("(")) {
-            if (true// condation
-            ) {
+            if (ConditionParser.isCondition()) {
                 if (Token.getNextToken()[0] == ")") {
                     if (Token.getNextToken()[0] == "{") {
                         Statment.statment(Token.getNextToken());
