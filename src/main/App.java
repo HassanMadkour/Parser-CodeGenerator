@@ -8,7 +8,7 @@ public class App {
     public static void main(String[] args) throws Exception {
         try {
 
-            File tokenFile = new File("N:/4thYear/first-Term/Compiler/project/parser/resources/Tokens.text");
+            File tokenFile = new File("N:/4thYear/first-Term/Compiler/project/parser/resources/TokenWithType.text");
             Token.tokens = Token.convertTheFiletoList(tokenFile);
 
         } catch (NoSuchElementException e) {

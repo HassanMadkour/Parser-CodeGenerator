@@ -1,0 +1,33 @@
+int Keyword
+a Identifier
+= Operator
+10 Numeric Constant
+; Special Character
+double Keyword
+b Identifier
+= Operator
+11 Numeric Constant
+; Special Character
+if Keyword
+( Special Character
+a Identifier
+< Operator
+b Identifier
+) Special Character
+{ Special Character
+a Identifier
+= Operator
+b Identifier
++ Operator
+1 Numeric Constant
+; Special Character
+} Special Character
+else Keyword
+{ Special Character
+b Identifier
+= Operator
+a Identifier
+- Operator
+1 Numeric Constant
+; Special Character
+} Special Character
