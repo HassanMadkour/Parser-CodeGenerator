@@ -10,7 +10,13 @@ public class App {
 
             File tokenFile = new File("N:/4thYear/first-Term/Compiler/project/parser/resources/TokenWithType.text");
             Token.tokens = Token.convertTheFiletoList(tokenFile);
+            for (String[] array : Token.tokens) {
+                for (int i = 0; i < 2; i++) {
+                    System.out.print(array[i] + "   ");
+                }
+                System.out.print("   \n");
 
+            }
         } catch (NoSuchElementException e) {
             System.err.println(e.getMessage());
         }

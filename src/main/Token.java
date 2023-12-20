@@ -22,7 +22,7 @@ public class Token {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 String[] words = line.split("\\s+");
-                if (words[1] == "Keyword") {
+                if (words[1].equals("Keyword")) {
                     words[1] = typeOFKeyword(words[0]);
                 }
                 tokenList.add(words);
@@ -42,7 +42,7 @@ public class Token {
     private static String typeOFKeyword(String keyword) {
         String[] keywords = { "if", "for", "else" };
         for (int i = 0; i < keywords.length; i++)
-            if (keyword == keywords[i])
+            if (keyword.equals(keywords[i]))
                 return keywords[i];
         return "datatype";
     }
