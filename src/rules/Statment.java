@@ -8,10 +8,8 @@ public class Statment {
                 return StatmentType.WHILE;
             case "do":
                 return StatmentType.DO;
-
             case "switch":
                 return StatmentType.SWITCH;
-
             case "if":
                 return StatmentType.IF;
             case "for":
@@ -37,7 +35,7 @@ public class Statment {
                 For.forStatment();
                 break;
             case WHILE:
-                For.forStatment();
+                // While
                 break;
             case DO:
                 For.forStatment();

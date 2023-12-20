@@ -11,13 +11,15 @@ public class IF {
             ) {
                 if (Token.getNextToken()[0].equals(")")) {
                     if (Token.getNextToken()[0].equals("{")) {
+                        // write new statment
                         Statment.statment(Token.getNextToken());
-                        if (Token.getNextToken()[0] == "}") {
-                            if (Token.getNextToken()[0] == "else") {
-                                if (Token.getNextToken()[0] == "{") {
+
+                        if (Token.getNextToken()[0].equals("}")) {
+                            if (Token.getNextToken()[0].equals("else")) {
+                                if (Token.getNextToken()[0].equals("{")) {
                                     Statment.statment(Token.getNextToken());
-                                    if (Token.getNextToken()[0] == "}") {
-                                        System.err.println("");
+                                    if (Token.getNextToken()[0].equals("}")) {
+                                        // end of if statment
                                     } else {
                                         System.err.println(" } not exist  ");
                                     }

@@ -10,12 +10,12 @@ public class For {
                 if (true
                 // condtion
                 ) {
-                    if (Token.getNextToken()[0] == ";") {
+                    if (Token.getNextToken()[0].equals(";")) {
                         if (ExpressionParser.isValidExpression()) {
-                            if (Token.getNextToken()[0] == ")") {
-                                if (Token.getNextToken()[0] == "{") {
+                            if (Token.getNextToken()[0].equals(")")) {
+                                if (Token.getNextToken()[0].equals("{")) {
                                     Statment.statment(Token.getNextToken());
-                                    if (Token.getNextToken()[0] == "}") {
+                                    if (Token.getNextToken()[0].equals("}")) {
                                         // end of for
                                     } else {
 

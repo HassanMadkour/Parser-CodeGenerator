@@ -48,8 +48,13 @@ public class Token {
     }
 
     public static String[] getNextToken() {
-        indexofToken++;
-        return tokens.get(indexofToken);
+        if (indexofToken < tokens.size()) {
+            indexofToken++;
+            return tokens.get(indexofToken);
+        } else {
+            String[] x = { " ", " " };
+            return x;
+        }
     }
 
     public static String[] getcurrentToken() {
