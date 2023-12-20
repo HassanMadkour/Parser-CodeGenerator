@@ -9,7 +9,7 @@ public class Statment {
             case "for":
                 return StatmentType.FOR;
             case "Identifier":
-                return StatmentType.EspressionParser;
+                return StatmentType.ExpressionParser;
             case "datatype":
                 return StatmentType.DECLERATION;
 
@@ -27,7 +27,7 @@ public class Statment {
                 break;
             case FOR:
                 break;
-            case EspressionParser:
+            case ExpressionParser:
                 ExpressionParser.isValidExpression();
 
             default:
@@ -41,7 +41,7 @@ public class Statment {
     }
 
     enum StatmentType {
-        IF, FOR, EspressionParser, DECLERATION, NONE // false statment
+        IF, FOR, ExpressionParser, DECLERATION, NONE // false statment
     }
 }
 
