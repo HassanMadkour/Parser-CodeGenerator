@@ -11,6 +11,7 @@ public class IF {
                     if (Token.getNextToken()[0].equals("{")) {
                         // write new statment
                         Statment.statment(Token.getNextToken());
+                        // to stop if error show
                         if (!Statment.vaildation()) {
                             return false;
                         }

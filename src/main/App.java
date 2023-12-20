@@ -9,9 +9,11 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         try {
+
             // read file in list
-            File tokenFile = new File("N:/4thYear/first-Term/Compiler/project/parser/resources/TokenWithType.text");
+            File tokenFile = new File("parser/resources/newToken.text");
             Token.tokens = Token.convertTheFiletoList(tokenFile);
+
             // for (String[] array : Token.tokens) {
             // for (int i = 0; i < 2; i++) {
             // System.out.print(array[i] + " ");
