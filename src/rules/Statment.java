@@ -41,10 +41,12 @@ public class Statment {
                 For.forStatment();
                 break;
             case ExpressionParser:
-                ExpressionParser.isValidExpression();
+                ExpressionParser.isValidExpression(false);
+            case SWITCH:
+                // Switch class
 
             case DECLERATION:
-                // decleration class
+            VariableDefinitionParser.VariableDefinitionParser()
             default:
                 System.err.println("Can't recognize this statement");
                 break;

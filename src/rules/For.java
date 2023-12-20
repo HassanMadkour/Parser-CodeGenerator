@@ -5,8 +5,7 @@ import main.Token;
 public class For {
     public static void forStatment() {
         if (Token.getNextToken()[0] == "(") {
-            if (ExpressionParser.isValidExpression(false)// Decleration
-            ) {
+            if (ExpressionParser.isValidExpression(false) || VariableDefinitionParser.isValidVariableDefinition()) {
                 if (ConditionParser.isCondition()) {
                     if (Token.getNextToken()[0].equals(";")) {
                         if (ExpressionParser.isValidExpression(true)) {
