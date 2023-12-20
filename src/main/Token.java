@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Token {
-    static int indexofToken = -1;
-    static List<String[]> tokens;
+    static public int indexofToken = -1;
+    static public List<String[]> tokens;
 
     public static List<String[]> convertTheFiletoList(File file) {
 
@@ -40,7 +40,7 @@ public class Token {
     }
 
     private static String typeOFKeyword(String keyword) {
-        String[] keywords = { "if", "for", "else" };
+        String[] keywords = { "if", "for", "else", "do", "while" };
         for (int i = 0; i < keywords.length; i++)
             if (keyword.equals(keywords[i]))
                 return keywords[i];

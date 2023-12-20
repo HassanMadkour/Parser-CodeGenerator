@@ -14,7 +14,7 @@ public class For {
                         if (Token.getNextToken()[0] == "{") {
                             Statment.statment(Token.getNextToken());
                             if (Token.getNextToken()[0] == "}") {
-                                
+                                //end of for 
                             }else{
                                 
                                                      System.err.println("Prehaps '}' non-exist");
@@ -29,7 +29,7 @@ public class For {
                     }
 
                     }else{
-                         System.err.println("error in expression ");
+                         System.err.println("ex ");
                     }
                 }else{
                                 System.err.println("; not exist");
@@ -40,7 +40,7 @@ public class For {
             }
 
             } else {
-                System.err.println("error in expression ");
+                System.err.println("Syntax error on token '(', Expression expected after this token");
 
             }
 

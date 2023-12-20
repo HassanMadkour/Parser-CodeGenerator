@@ -26,11 +26,15 @@ public class Statment {
 
                 break;
             case FOR:
+                For.forStatment();
                 break;
             case ExpressionParser:
                 ExpressionParser.isValidExpression();
 
+            case DECLERATION:
+                // decleration class
             default:
+                System.err.println("Can't recognize this statement");
                 break;
         }
     }
@@ -41,7 +45,7 @@ public class Statment {
     }
 
     enum StatmentType {
-        IF, FOR, ExpressionParser, DECLERATION, NONE // false statment
+        IF, FOR, ExpressionParser, DECLERATION, DO, WHILE, NONE // false statment
     }
 }
 

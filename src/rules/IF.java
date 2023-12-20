@@ -40,9 +40,7 @@ public class IF {
             } else {
                 System.err.println("error in condtion");
             }
-        } else
-
-        {
+        } else {
             System.err.println("Error Syntax ( ");
         }
 
