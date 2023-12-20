@@ -6,9 +6,7 @@ public class IF {
 
     public static void ifStatment() {
         if (Token.getNextToken()[0].equals("(")) {
-            if (true
-            // condithon
-            ) {
+            if (ConditionParser.isCondition()) {
                 if (Token.getNextToken()[0].equals(")")) {
                     if (Token.getNextToken()[0].equals("{")) {
                         // write new statment

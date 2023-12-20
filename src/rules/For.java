@@ -7,9 +7,7 @@ public class For {
         if (Token.getNextToken()[0] == "(") {
             if (ExpressionParser.isValidExpression()// Decleration
             ) {
-                if (true
-                // condtion
-                ) {
+                if (ConditionParser.isCondition()) {
                     if (Token.getNextToken()[0].equals(";")) {
                         if (ExpressionParser.isValidExpression()) {
                             if (Token.getNextToken()[0].equals(")")) {

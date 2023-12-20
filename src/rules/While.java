@@ -2,7 +2,7 @@ package rules;
 
 import main.Token;
 
-public class WHILE {
+public class While {
 
     public static void whilestatement() {
 
