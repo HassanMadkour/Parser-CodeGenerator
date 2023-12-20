@@ -60,7 +60,3 @@ public class Statment {
         IF, FOR, ExpressionParser, DECLERATION, DO, WHILE, SWITCH, NONE // false statment
     }
 }
-
-// expression
-// for
-// if
