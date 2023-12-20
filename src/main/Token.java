@@ -40,7 +40,7 @@ public class Token {
     }
 
     private static String typeOFKeyword(String keyword) {
-        String[] keywords = { "if", "for" };
+        String[] keywords = { "if", "for", "else" };
         for (int i = 0; i < keywords.length; i++)
             if (keyword == keywords[i])
                 return keywords[i];

@@ -1,9 +1,9 @@
 class ExpressionParser {
 
-
     public static boolean isValidExpression() {
 
-        return parseIdentifier() && match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber() && match(";");
+        return parseIdentifier() && match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber()
+                && match(";");
     }
 
     private static boolean parseIdentifier() {
@@ -43,4 +43,3 @@ class ExpressionParser {
         }
     }
 }
-
