@@ -40,7 +40,7 @@ public class Token {
     }
 
     private static String typeOFKeyword(String keyword) {
-        String[] keywords = { "if", "for", "else", "do", "while" };
+        String[] keywords = { "if", "for", "else", "do", "while", "switch" };
         for (int i = 0; i < keywords.length; i++)
             if (keyword.equals(keywords[i]))
                 return keywords[i];
@@ -53,6 +53,8 @@ public class Token {
     }
 
     public static String[] getcurrentToken() {
+        if (indexofToken == -1)
+            return tokens.get(0);
         return tokens.get(indexofToken);
     }
 

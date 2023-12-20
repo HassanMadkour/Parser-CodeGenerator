@@ -4,6 +4,14 @@ public class Statment {
 
     private static StatmentType getStatmenType(String[] token) {
         switch (token[1]) {
+            case "while":
+                return StatmentType.WHILE;
+            case "do":
+                return StatmentType.DO;
+
+            case "switch":
+                return StatmentType.SWITCH;
+
             case "if":
                 return StatmentType.IF;
             case "for":
@@ -28,6 +36,12 @@ public class Statment {
             case FOR:
                 For.forStatment();
                 break;
+            case WHILE:
+                For.forStatment();
+                break;
+            case DO:
+                For.forStatment();
+                break;
             case ExpressionParser:
                 ExpressionParser.isValidExpression();
 
@@ -45,7 +59,7 @@ public class Statment {
     }
 
     enum StatmentType {
-        IF, FOR, ExpressionParser, DECLERATION, DO, WHILE, NONE // false statment
+        IF, FOR, ExpressionParser, DECLERATION, DO, WHILE, SWITCH, NONE // false statment
     }
 }
 

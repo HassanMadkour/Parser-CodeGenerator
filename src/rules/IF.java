@@ -5,12 +5,12 @@ import main.Token;
 public class IF {
 
     public static void ifStatment() {
-        if (Token.getNextToken()[0] == "(") {
+        if (Token.getNextToken()[0].equals("(")) {
             if (true
-            // condition
+            // condithon
             ) {
-                if (Token.getNextToken()[0] == ")") {
-                    if (Token.getNextToken()[0] == "{") {
+                if (Token.getNextToken()[0].equals(")")) {
+                    if (Token.getNextToken()[0].equals("{")) {
                         Statment.statment(Token.getNextToken());
                         if (Token.getNextToken()[0] == "}") {
                             if (Token.getNextToken()[0] == "else") {
