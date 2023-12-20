@@ -3,11 +3,19 @@ package rules;
 import main.Token;
 
 class ExpressionParser {
+    private boolean fore;
+
+    // Constructor
+    public ExpressionParser(boolean fore) {
+        this.fore = fore;
+    }
 
     public static boolean isValidExpression() {
+        if(fore){ return match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber();} 
+        else{
 
         return match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber()
-                && match(";");
+                && match(";");}
     }
 
     private static boolean parseIdentifier() {
