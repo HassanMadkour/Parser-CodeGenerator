@@ -35,7 +35,7 @@ public class Statment {
                 For.forStatment();
                 break;
             case WHILE:
-                // While
+                WHILE.whilestatement();
                 break;
             case DO:
                 For.forStatment();

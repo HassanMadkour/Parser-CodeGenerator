@@ -19,10 +19,10 @@ public class App {
             }
 
             // intial state
-            while (Token.indexofToken < Token.tokens.size()) {
-                // Statment.statment(Token.getNextToken());
+            // while (Token.indexofToken < Token.tokens.size()) {
+            // // Statment.statment(Token.getNextToken());
 
-            }
+            // }
             // Statment.statment(Token.getNextToken());
 
         } catch (NoSuchElementException e) {
