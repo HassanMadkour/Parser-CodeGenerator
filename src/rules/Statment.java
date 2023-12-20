@@ -46,7 +46,7 @@ public class Statment {
                 // Switch class
 
             case DECLERATION:
-            VariableDefinitionParser.VariableDefinitionParser()
+                VariableDefinitionParser.isValidVariableDefinition();
             default:
                 System.err.println("Can't recognize this statement");
                 break;

@@ -1,5 +1,4 @@
 int Keyword
-a Identifier
 = Operator
 10 Numeric Constant
 ; Special Character

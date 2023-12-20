@@ -3,8 +3,8 @@ package rules;
 import main.Token;
 
 public class For {
-    public static void forStatment() {
-        if (Token.getNextToken()[0] == "(") {
+    public static boolean forStatment() {
+        if (Token.getNextToken()[0].equals("(")) {
             if (ExpressionParser.isValidExpression(false) || VariableDefinitionParser.isValidVariableDefinition()) {
                 if (ConditionParser.isCondition()) {
                     if (Token.getNextToken()[0].equals(";")) {
@@ -14,39 +14,51 @@ public class For {
                                     Statment.statment(Token.getNextToken());
                                     if (Token.getNextToken()[0].equals("}")) {
                                         // end of for
-                                        return;
+                                        return true;
                                     } else {
 
                                         System.err.println("Prehaps '}' non-exist");
+                                        return false;
+
                                     }
 
                                 } else {
                                     System.err.println("Prehaps '{' non-exist");
+                                    return false;
 
                                 }
                             } else {
                                 System.err.println("Prehaps ')' non-exist ");
+                                return false;
+
                             }
 
                         } else {
                             System.err.println("ex ");
+                            return false;
+
                         }
                     } else {
                         System.err.println("; not exist");
                     }
+                    return false;
+
                 } else {
                     System.err.println("error in for condtion ");
+                    return false;
 
                 }
 
             } else {
                 System.err.println("Syntax error on token '(', Expression expected after this token");
+                return false;
 
             }
 
         } else {
             System.err.println("Prehaps '(' non-exist ");
-            return;
+            return false;
+
         }
 
     }

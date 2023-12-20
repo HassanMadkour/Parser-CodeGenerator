@@ -4,7 +4,7 @@ import main.Token;
 
 public class IF {
 
-    public static void ifStatment() {
+    public static boolean ifStatment() {
         if (Token.getNextToken()[0].equals("(")) {
             if (ConditionParser.isCondition()) {
                 if (Token.getNextToken()[0].equals(")")) {
@@ -19,7 +19,7 @@ public class IF {
                                     Statment.statment(Token.getNextToken());
                                     if (Token.getNextToken()[0].equals("}")) {
                                         // end of if statment
-                                        return;
+                                        return true;
                                     } else {
                                         System.err.println(" } not exist  ");
                                     }
@@ -29,23 +29,33 @@ public class IF {
                                 }
                             } // end of else
                               // end of if
-                            return;
+                            return true;
 
                         } else {
                             System.err.println("} not exist ");
+                            return false;
+
                         }
                     } else {
                         System.err.println(" prehaps this { not exist");
+                        return false;
+
                     }
 
                 } else {
                     System.err.println("Error Syntax )");
+                    return false;
+
                 }
             } else {
                 System.err.println("error in condtion");
+                return false;
+
             }
         } else {
             System.err.println("Error Syntax ( ");
+            return false;
+
         }
 
     }
