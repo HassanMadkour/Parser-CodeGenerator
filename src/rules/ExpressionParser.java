@@ -6,29 +6,29 @@ class ExpressionParser {
 
     public static boolean isValidExpression() {
 
-        return parseIdentifier() && match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber()
+        return  match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber()
                 && match(";");
     }
 
-    private static boolean parseIdentifier() {
-        String token = Token.getNextToken()[0];
-        if (token.matches("[a-zA-Z][a-zA-Z0-9]*")) {
+   private static boolean parseIdentifier() {
+        String token = token.getnextToken()[1];
+        if (token.matches("Identifier")) {
             return true;
         } else {
-            System.out.println("Error: Expected an identifier but found " + token);
+            System.out.println("Error: Expected an identifier but found " + token.getnextToken()[0]);
             return false;
         }
     }
 
     private static boolean parseNumber() {
-        String token = Token.getNextToken()[0];
-        try {
-            Double.parseDouble(token);
+        String token = token.getnextToken()[1];
+        if (token.matches("Numeric")) {
             return true;
-        } catch (NumberFormatException e) {
-            System.out.println("Error: Expected a number but found " + token);
+        } else {
+            System.out.println("Error: Expected a numeric value but found " + token.getnextToken()[0]);
             return false;
         }
+            
     }
 
     private static boolean parseArithmeticOperator() {
@@ -36,11 +36,12 @@ class ExpressionParser {
         return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
     }
 
-    private static boolean match(String expected) {
-        String token = Token.getNextToken()[0];
+      private static boolean match(String expected) {
+        String token = Token.getNextToken()[0]];
         if (token.equals(expected)) {
             return true;
-        } else {
+        } else { 
+               
             System.out.println("Error: Expected '" + expected + "' but found " +
                     (token.isEmpty() ? "end of input" : "'" + token + "'"));
             return false;
