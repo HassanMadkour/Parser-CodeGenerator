@@ -48,7 +48,7 @@ public class Token {
     }
 
     public static String[] getNextToken() {
-        if (indexofToken < tokens.size()) {
+        if (indexofToken < tokens.size() - 1) {
             indexofToken++;
             return tokens.get(indexofToken);
         } else {
@@ -60,7 +60,7 @@ public class Token {
     public static String[] getcurrentToken() {
         if (indexofToken == -1)
             return tokens.get(0);
-        return tokens.get(indexofToken);
+        return tokens.get(indexofToken - 1);
     }
 
 }

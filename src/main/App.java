@@ -12,16 +12,17 @@ public class App {
             // read file in list
             File tokenFile = new File("N:/4thYear/first-Term/Compiler/project/parser/resources/TokenWithType.text");
             Token.tokens = Token.convertTheFiletoList(tokenFile);
-            for (String[] array : Token.tokens) {
-                for (int i = 0; i < 2; i++) {
-                    System.out.print(array[i] + " ");
-                }
-                System.out.print(" \n");
+            // for (String[] array : Token.tokens) {
+            // for (int i = 0; i < 2; i++) {
+            // System.out.print(array[i] + " ");
+            // }
+            // System.out.print(" \n");
 
-            }
+            // }
 
             // intial state
-            while (Token.indexofToken < Token.tokens.size()) {
+            while (Token.indexofToken < Token.tokens.size() && Statment.vaildation()) {
+
                 Statment.statment(Token.getNextToken());
 
             }

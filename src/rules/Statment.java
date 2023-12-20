@@ -1,6 +1,10 @@
 package rules;
 
+import main.Token;
+
 public class Statment {
+
+    static public boolean vaild = true;
 
     private static StatmentType getStatmenType(String[] token) {
         switch (token[1]) {
@@ -28,29 +32,42 @@ public class Statment {
 
         switch (getStatmenType(token)) {
             case IF:
-                IF.ifStatment();
-
+                vaild = IF.ifStatment();
                 break;
             case FOR:
-                For.forStatment();
+                vaild = For.forStatment();
                 break;
             case WHILE:
-                While.whilestatement();
+                vaild = While.whilestatement();
                 break;
             case DO:
-                For.forStatment();
+                vaild = For.forStatment();
                 break;
             case ExpressionParser:
-                ExpressionParser.isValidExpression(false);
+                vaild = ExpressionParser.isValidExpression(false);
+                break;
             case SWITCH:
                 // Switch class
+                break;
 
             case DECLERATION:
-                VariableDefinitionParser.isValidVariableDefinition();
-            default:
-                System.err.println("Can't recognize this statement");
+                vaild = VariableDefinitionParser.isValidVariableDefinition();
+                break;
+            default: {
+                if (Token.getNextToken()[0].equals(" ")) {
+                    System.err.println("no Syntax Error");
+                    vaild = false;
+                } else {
+                    System.err.println("the Statment Can not start with token " + Token.getcurrentToken()[0]);
+                    vaild = false;
+                }
+            }
                 break;
         }
+    }
+
+    static public boolean vaildation() {
+        return vaild;
     }
 
     static boolean checkStartofStatment(String[] token) {
