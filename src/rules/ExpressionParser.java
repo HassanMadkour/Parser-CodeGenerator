@@ -1,3 +1,7 @@
+package rules;
+
+import main.Token;
+
 class ExpressionParser {
 
     public static boolean isValidExpression() {
@@ -7,7 +11,7 @@ class ExpressionParser {
     }
 
     private static boolean parseIdentifier() {
-        String token = nextToken();
+        String token = Token.getNextToken()[0];
         if (token.matches("[a-zA-Z][a-zA-Z0-9]*")) {
             return true;
         } else {
@@ -17,7 +21,7 @@ class ExpressionParser {
     }
 
     private static boolean parseNumber() {
-        String token = nextToken();
+        String token = Token.getNextToken()[0];
         try {
             Double.parseDouble(token);
             return true;
@@ -28,12 +32,12 @@ class ExpressionParser {
     }
 
     private static boolean parseArithmeticOperator() {
-        String token = nextToken();
+        String token = Token.getNextToken()[0];
         return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
     }
 
     private static boolean match(String expected) {
-        String token = nextToken();
+        String token = Token.getNextToken()[0];
         if (token.equals(expected)) {
             return true;
         } else {
