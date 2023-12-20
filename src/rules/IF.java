@@ -15,11 +15,13 @@ public class IF {
                         Statment.statment(Token.getNextToken());
 
                         if (Token.getNextToken()[0].equals("}")) {
+                            // check if else exist
                             if (Token.getNextToken()[0].equals("else")) {
                                 if (Token.getNextToken()[0].equals("{")) {
                                     Statment.statment(Token.getNextToken());
                                     if (Token.getNextToken()[0].equals("}")) {
                                         // end of if statment
+                                        return;
                                     } else {
                                         System.err.println(" } not exist  ");
                                     }
@@ -28,6 +30,8 @@ public class IF {
 
                                 }
                             } // end of else
+                              // end of if
+                            return;
 
                         } else {
                             System.err.println("} not exist ");

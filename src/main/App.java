@@ -3,8 +3,6 @@ package main;
 import java.io.File;
 import java.util.NoSuchElementException;
 
-import rules.Statment;
-
 public class App {
 
     public static void main(String[] args) throws Exception {
@@ -21,6 +19,10 @@ public class App {
             }
 
             // intial state
+            while (Token.indexofToken < Token.tokens.size()) {
+                // Statment.statment(Token.getNextToken());
+
+            }
             // Statment.statment(Token.getNextToken());
 
         } catch (NoSuchElementException e) {

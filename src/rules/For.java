@@ -17,6 +17,7 @@ public class For {
                                     Statment.statment(Token.getNextToken());
                                     if (Token.getNextToken()[0].equals("}")) {
                                         // end of for
+                                        return;
                                     } else {
 
                                         System.err.println("Prehaps '}' non-exist");
