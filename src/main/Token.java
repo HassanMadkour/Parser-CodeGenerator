@@ -52,4 +52,8 @@ public class Token {
         return tokens.get(indexofToken);
     }
 
+    public static String[] getcurrentToken() {
+        return tokens.get(indexofToken);
+    }
+
 }
