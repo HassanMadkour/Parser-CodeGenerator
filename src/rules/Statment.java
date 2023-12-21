@@ -41,7 +41,7 @@ public class Statment {
                 vaild = While.whilestatement();
                 break;
             case DO:
-                vaild = For.forStatment();
+                vaild = DoWhile.doWhileStatment();
                 break;
             case ExpressionParser:
                 vaild = ExpressionParser.isValidExpression(false);

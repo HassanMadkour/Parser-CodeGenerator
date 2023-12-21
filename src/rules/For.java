@@ -9,7 +9,7 @@ public class For {
             if (VariableDefinitionParser.isValidVariableDefinition()) {
                 if (ConditionParser.isCondition()) {
                     if (Token.getNextToken()[0].equals(";")) {
-                        String w = Token.getNextToken()[0]; // to avoid DataType
+                        c = Token.getNextToken()[0]; // to avoid DataType
                         if (ExpressionParser.isValidExpression(true)) {
                             if (Token.getNextToken()[0].equals(")")) {
                                 if (Token.getNextToken()[0].equals("{")) {
@@ -61,7 +61,7 @@ public class For {
             }
 
         } else {
-            System.err.println("as Prehaps '(' non-exist ");
+            System.err.println("as sasa Prehaps '(' non-exist ");
             return false;
 
         }
