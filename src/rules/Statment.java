@@ -47,7 +47,7 @@ public class Statment {
                 vaild = ExpressionParser.isValidExpression(false);
                 break;
             case SWITCH:
-                // Switch class
+                vaild = Switch.switchStatment();
                 break;
 
             case DECLERATION:
