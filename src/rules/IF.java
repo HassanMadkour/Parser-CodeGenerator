@@ -27,10 +27,10 @@ public class IF {
                                         // end of if statment
                                         return true;
                                     } else {
-                                        System.err.println(" } not exist  ");
+                                        System.err.println(" } not exist  in if  ");
                                     }
                                 } else {
-                                    System.err.println(" prehaps this { not exist");
+                                    System.err.println(" prehaps this { not exist in if ");
 
                                 }
                             } // end of else
@@ -39,28 +39,28 @@ public class IF {
                             return true;
 
                         } else {
-                            System.err.println("} not exist ");
+                            System.err.println("} not exist in if ");
                             return false;
 
                         }
                     } else {
-                        System.err.println(" prehaps this { not exist");
+                        System.err.println(" prehaps this { not exist in if");
                         return false;
 
                     }
 
                 } else {
-                    System.err.println("Error Syntax )");
+                    System.err.println("Error Syntax )  in if");
                     return false;
 
                 }
             } else {
-                System.err.println("error in condtion");
+                System.err.println("error in condtion in if");
                 return false;
 
             }
         } else {
-            System.err.println("Error Syntax ( ");
+            System.err.println("Error Syntax (  in if");
             return false;
 
         }
