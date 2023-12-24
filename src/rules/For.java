@@ -5,12 +5,10 @@ import main.Token;
 public class For {
     public static boolean forStatment() {
         if (Token.getNextToken()[0].equals("(")) {
-            String c = Token.getNextToken()[0]; // to avoid DataType
-            if (VariableDefinitionParser.isValidVariableDefinition()) {
+            if (Token.getNextToken()[1].equals("datatype") && VariableDefinitionParser.isValidVariableDefinition()) {
                 if (ConditionParser.isCondition()) {
                     if (Token.getNextToken()[0].equals(";")) {
-                        c = Token.getNextToken()[0]; // to avoid DataType
-                        if (ExpressionParser.isValidExpression(true)) {
+                        if (Token.getNextToken()[1].equals("Identifier") && ExpressionParser.isValidExpression(true)) {
                             if (Token.getNextToken()[0].equals(")")) {
                                 if (Token.getNextToken()[0].equals("{")) {
                                     Statment.statment(Token.getNextToken());
