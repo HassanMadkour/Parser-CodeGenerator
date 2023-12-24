@@ -20,18 +20,18 @@ public class For {
                                         return true;
                                     } else {
 
-                                        System.err.println("assa Prehaps '}' non-exist");
+                                        System.err.println(" Prehaps '}' non-exist in for ");
                                         return false;
 
                                     }
 
                                 } else {
-                                    System.err.println(" Prehaps '{' non-exist");
+                                    System.err.println(" Prehaps '{' non-exist in for");
                                     return false;
 
                                 }
                             } else {
-                                System.err.println(" Prehaps ')' non-exist ");
+                                System.err.println(" Prehaps ')' non-exist in for");
                                 return false;
 
                             }
@@ -42,24 +42,24 @@ public class For {
 
                         }
                     } else {
-                        System.err.println("; not exist");
+                        System.err.println("; not exist in for");
                     }
                     return false;
 
                 } else {
-                    System.err.println("error in for condtion ");
+                    System.err.println("error in for condtion in for ");
                     return false;
 
                 }
 
             } else {
-                System.err.println("Syntax error on token '(', Expression expected after this token");
+                System.err.println("Syntax error on token '(', error in for");
                 return false;
 
             }
 
         } else {
-            System.err.println("as sasa Prehaps '(' non-exist ");
+            System.err.println(" Prehaps '(' non-exist in for ");
             return false;
 
         }
