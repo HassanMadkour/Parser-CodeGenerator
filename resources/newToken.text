@@ -1,0 +1,36 @@
+switch Keyword
+( Special Character
+a Identifier
+) Special Character
+{ Special Character
+case Keyword
+1 Numeric Constant
+: Special Character
+m Identifier
+= Operator
+n Identifier
++ Operator
+9 Numeric Constant
+; Special Character
+break Keyword
+; Special Character
+case Keyword
+2 Numeric Constant
+: Special Character
+a Identifier
+= Operator
+a Identifier
++ Operator
+3 Numeric Constant
+; Special Character
+break Keyword
+; Special Character
+default Keyword
+: Special Character
+a Identifier
+= Operator
+a Identifier
++ Operator
+4 Numeric Constant
+; Special Character
+} Special Character
