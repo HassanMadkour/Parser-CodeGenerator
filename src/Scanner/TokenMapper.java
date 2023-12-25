@@ -72,6 +72,7 @@ public class TokenMapper {
         tokenMapper.put(";", "Special Character");
         tokenMapper.put("'", "Special Character");
         tokenMapper.put("\"", "Special Character");
+        tokenMapper.put(":", "Special Character");
     }
 
     public static Optional<String> checkToken(String token) {
