@@ -5,7 +5,9 @@ import main.Token;
 public class IF {
 
     public static boolean ifStatment() {
+
         if (Token.getNextToken()[0].equals("(")) {
+
             if (ConditionParser.isCondition()) {
                 if (Token.getNextToken()[0].equals(")")) {
                     if (Token.getNextToken()[0].equals("{")) {
