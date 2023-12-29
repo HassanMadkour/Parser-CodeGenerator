@@ -1,6 +1,6 @@
 package rules;
 
-import main.Token;
+import main.*;
 
 public class Statment {
 
@@ -56,6 +56,12 @@ public class Statment {
             default: {
                 if (Token.getNextToken()[0].equals(" ")) {
                     System.err.println("no Syntax Error");
+
+
+                    System.out.println("Elements after modification:");
+                    for (int i = 0; i < Atom.atomList.size(); i++) {
+                        System.out.print(Atom.atomList.get(i));}
+
                     vaild = false;
                 } else {
                     System.err.println("the Statment Can not start with token " + Token.getcurrentToken()[0]);
