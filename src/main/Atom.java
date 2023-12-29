@@ -19,6 +19,7 @@ public class Atom {
     public static String getPreviousLabel() {
         return "L" + (labelindex - 2);
     }
+
     public static String getPreviousLabelp2() {
         return "L" + (labelindex - 3);
     }
