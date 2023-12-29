@@ -22,7 +22,6 @@ public class For {
                                     Atom.atomList.set(Atom.atomList.size()-1, a1);
                                     Atom.atomList.add("(JMP,"+Atom.getPreviousLabelp2()+")");
                                     Atom.atomList.add("(LBL,"+Atom.getCurrentLabel()+")");   
-                                    System.err.println(Atom.atomList);
                                     if (!Statment.vaildation()) {
                                         return false;
                                     }

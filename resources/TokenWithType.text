@@ -8,17 +8,35 @@ b Identifier
 = Operator
 11 Numeric Constant
 ; Special Character
+int Keyword
+x Identifier
+= Operator
+6 Numeric Constant
+; Special Character
+int Keyword
+w Identifier
+= Operator
+8 Numeric Constant
+; Special Character
+int Keyword
+m Identifier
+= Operator
+4 Numeric Constant
+; Special Character
+int Keyword
+n Identifier
+= Operator
+3 Numeric Constant
+; Special Character
 if Keyword
 ( Special Character
 a Identifier
 < Operator
-10 Numeric Constant
+12 Numeric Constant
 ) Special Character
 { Special Character
 a Identifier
 = Operator
-b Identifier
-+ Operator
 1 Numeric Constant
 ; Special Character
 } Special Character
@@ -26,8 +44,39 @@ else Keyword
 { Special Character
 b Identifier
 = Operator
+1 Numeric Constant
+; Special Character
+} Special Character
+while Keyword
+( Special Character
+x Identifier
+== Operator
+5 Numeric Constant
+) Special Character
+{ Special Character
+x Identifier
+= Operator
+4 Numeric Constant
+; Special Character
+} Special Character
+for Keyword
+( Special Character
+int Keyword
+x Identifier
+= Operator
+4 Numeric Constant
+; Special Character
+x Identifier
+< Operator
+6 Numeric Constant
+; Special Character
+x Identifier
+= Operator
+8 Numeric Constant
+) Special Character
+{ Special Character
 a Identifier
-- Operator
+= Operator
 1 Numeric Constant
 ; Special Character
 } Special Character

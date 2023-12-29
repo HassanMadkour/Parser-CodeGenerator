@@ -5,6 +5,7 @@ import main.*;
 public class Statment {
 
     static public boolean vaild = true;
+    static public boolean vaildwrite = false;
 
     private static StatmentType getStatmenType(String[] token) {
         switch (token[1]) {
@@ -56,6 +57,7 @@ public class Statment {
             default: {
                 if (Token.getNextToken()[0].equals(" ")) {
                     System.err.println("no Syntax Error");
+                    vaildwrite=true;
 
 
                     System.out.println("Elements after modification:");
