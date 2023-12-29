@@ -32,6 +32,8 @@ public class App {
 
             fileWriter.close();
             File tokenFile = new File("resources/TokenWithType.text");
+            File atomFile = new File("resources/atoms.text");
+            FileWriter fileatom = new FileWriter(atomFile);
             Token.tokens = Token.convertTheFiletoList(tokenFile);
 
             while (Token.indexofToken < Token.tokens.size() && Statment.vaildation()) {
@@ -39,8 +41,13 @@ public class App {
                 Statment.statment(Token.getNextToken());
 
             }
-            if(Statment.vaildation()){
-                
+            
+            if(Statment.vaildwrite){
+                for (String iterator : Atom.atomList) {
+                    fileatom.write("%s \n".formatted(iterator));
+                    System.err.println(iterator);
+            }
+            fileatom.close();
             }
         } catch (NoSuchElementException e) {
             System.err.println(e.getMessage());

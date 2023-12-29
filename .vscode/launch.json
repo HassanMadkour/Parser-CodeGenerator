@@ -6,6 +6,13 @@
       "name": "App",
       "request": "launch",
       "mainClass": "main.App",
+      "projectName": "Parser-CodeGenerator_2bdfacd6"
+    },
+    {
+      "type": "java",
+      "name": "App",
+      "request": "launch",
+      "mainClass": "main.App",
       "projectName": "parser_b818012c"
     },
     {
