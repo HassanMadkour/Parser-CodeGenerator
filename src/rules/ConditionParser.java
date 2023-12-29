@@ -8,26 +8,30 @@ import main.Atom;
 class ConditionParser {
 
      static String numbersin;
+    static String a;
+    static String b;
+
 
 
 
     public static boolean isCondition() {
-       Atom.atomList.add("(");
-        Atom.atomList.add("TEST");
-        Atom.atomList.add(",");
+        if(parseIdentifier() && parseConditionalExpression() && parseNumber())
+        { String t="(TEST,"+a+","+b+","+numbersin+","+Atom.getNextLabel()+")"  ;
+            Atom.atomList.add(t);
+
+            return true;
+        }
 
 
 
 
-        return parseIdentifier() && parseConditionalExpression() && parseNumber();
+        return false;
     }
 
     private static boolean parseIdentifier() {
         String token[] = Token.getNextToken();
-
+          a=token[0];
         if (token[1].matches("Identifier")) {
-            Atom.atomList.add(token[0]);
-            Atom.atomList.add(",");
 
             return true;
 
@@ -39,14 +43,10 @@ class ConditionParser {
 
     private static boolean parseNumber() {
         String token[] = Token.getNextToken();
+        b=token[0];
 
         if (token[1].matches("Numeric")) {
-            Atom.atomList.add(token[0]);
-            Atom.atomList.add(",");
-            Atom.atomList.add(numbersin);
-            Atom.atomList.add(",");
-            Atom.atomList.add(Atom.getNextLabel());
-            Atom.atomList.add(")");
+
 
             return true;
         } else {
