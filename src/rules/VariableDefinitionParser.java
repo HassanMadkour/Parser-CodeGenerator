@@ -1,10 +1,15 @@
 package rules;
 
-import main.Token;
+import main.*;
 
 class VariableDefinitionParser {
 
     public static boolean isValidVariableDefinition() {
+        Atom.atomList.add("(");
+        Atom.atomList.add("MOV");
+        Atom.atomList.add(",");
+
+
 
         return parseIdentifier() && parseInitialization() && match(";");
     }
@@ -12,6 +17,10 @@ class VariableDefinitionParser {
     private static boolean parseIdentifier() {
         String[] token = Token.getNextToken();
         if (token[1].matches("Identifier")) {
+            Atom.atomList.add(token[0]);
+            Atom.atomList.add(",");
+
+
             return true;
         } else {
             System.out.println("Error:22222 Expected an identifier but found " + token[0]);
@@ -35,9 +44,13 @@ class VariableDefinitionParser {
     private static boolean parseNumber() {
         String[] token = Token.getNextToken();
         if (token[1].matches("Numeric")) {
+            Atom.atomList.add(token[0]);
+            Atom.atomList.add(")");
+
+
             return true;
         } else {
-            System.out.println("Error:1111111111111 Expected a numeric value but found " + token[0]);
+            System.out.println("Error: Expected a numeric value but found " + token[0]);
             return false;
         }
 
