@@ -44,8 +44,7 @@ public class App {
             
             if(Statment.vaildwrite){
                 for (String iterator : Atom.atomList) {
-                    fileatom.write("%s \n".formatted(iterator));
-                    System.err.println(iterator);
+                    fileatom.write("%s \n".formatted(iterator));                   
             }
             fileatom.close();
             }
