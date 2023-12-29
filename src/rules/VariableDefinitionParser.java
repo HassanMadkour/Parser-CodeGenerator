@@ -3,22 +3,23 @@ package rules;
 import main.*;
 
 class VariableDefinitionParser {
+    static String a,b;
 
     public static boolean isValidVariableDefinition() {
-        Atom.atomList.add("(");
-        Atom.atomList.add("MOV");
-        Atom.atomList.add(",");
+        if( parseIdentifier() && parseInitialization() && match(";"))
+        {  String r="(MOV,"+a+","+b+")";
+            Atom.atomList.add(r);
 
 
-
-        return parseIdentifier() && parseInitialization() && match(";");
+            return true ;
+        }
+        return false;
     }
 
     private static boolean parseIdentifier() {
         String[] token = Token.getNextToken();
+        a=token[0];
         if (token[1].matches("Identifier")) {
-            Atom.atomList.add(token[0]);
-            Atom.atomList.add(",");
 
 
             return true;
@@ -43,14 +44,13 @@ class VariableDefinitionParser {
 
     private static boolean parseNumber() {
         String[] token = Token.getNextToken();
+        b=token[0];
         if (token[1].matches("Numeric")) {
-            Atom.atomList.add(token[0]);
-            Atom.atomList.add(")");
 
 
             return true;
         } else {
-            System.out.println("Error: Expected a numeric value but found " + token[0]);
+            System.out.println("Error:1111111111111 Expected a numeric value but found " + token[0]);
             return false;
         }
 
