@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import CodeGenerator.TestAtom;
 import Scanner.File2TokenList;
 import Scanner.TokenMapper;
 import rules.Statment;
@@ -14,6 +15,7 @@ public class App {
 
     public static void main(String[] args) {
         try {
+            TestAtom.Testatom();
             File file = new File("resources/main.c");
             List<String> tokens = File2TokenList.convertFileToTokenList(file);
 
