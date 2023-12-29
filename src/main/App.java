@@ -39,6 +39,9 @@ public class App {
                 Statment.statment(Token.getNextToken());
 
             }
+            if(Statment.vaildation()){
+                
+            }
         } catch (NoSuchElementException e) {
             System.err.println(e.getMessage());
         } catch (IOException e) {
