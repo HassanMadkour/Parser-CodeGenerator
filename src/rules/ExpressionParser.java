@@ -61,7 +61,7 @@ class ExpressionParser {
     private static boolean parseNumber1() {
         String[] token = Token.getNextToken();
         c=token[0];
-        t=t+c+")";
+        t=t+c+","+m+")";
         Atom.atomList.add(t);
         if (token[1].matches("Numeric")) {
             return true;
@@ -75,10 +75,10 @@ class ExpressionParser {
 
     private static boolean parseArithmeticOperator() {
         String token = Token.getNextToken()[0];
-        if(token.equals("+")){t="(ADD,"+m+","+b+"," ;}
-        if(token.equals("-")){t="(SUB,"+m+","+b+"," ;}
-        if(token.equals("*")){t="(MUl,"+m+","+b+"," ;}
-        if(token.equals("/")){t="(DEV,"+m+","+b+"," ;}
+        if(token.equals("+")){t="(ADD,"+b+"," ;}
+        if(token.equals("-")){t="(SUB,"+b+"," ;}
+        if(token.equals("*")){t="(MUl,"+b+"," ;}
+        if(token.equals("/")){t="(DEV,"+b+"," ;}
 
         return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
     }
