@@ -6,24 +6,27 @@ class ExpressionParser {
 
     // Constructor
 
+
+    static String b;
     public static boolean isValidExpression(boolean fore) {
-        Atom.atomList.add("(");
-        Atom.atomList.add("MOV");
-        Atom.atomList.add(",");
         Token.indexofToken--;
-        String token =Token.getNextToken()[0];
-        Atom.atomList.add(token);
-        Atom.atomList.add(",");
+        String m=Token.getNextToken()[0];
+
         if (fore) {
             String []t= Token.getNextToken();
             if (parseNumber()){   Token.indexofToken--; Token.indexofToken--;
-                return match("=") && parseNumber1() ;}
+                String p="(MOV,"+m+","+b+")" ;
+                Atom.atomList.add(p);
+                return match("=") && parseNumber() ;}
             Token.indexofToken--; Token.indexofToken--;
+
             return match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber();
         } else {
             String []t= Token.getNextToken();
             if (parseNumber()){   Token.indexofToken--; Token.indexofToken--;
-                return match("=") && parseNumber1() && match(";");}
+                String p="(MOV,"+m+","+b+")" ;
+                Atom.atomList.add(p);
+                return match("=") && parseNumber() && match(";");}
             Token.indexofToken--; Token.indexofToken--;
             return match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber()
                     && match(";");
@@ -42,6 +45,7 @@ class ExpressionParser {
 
     private static boolean parseNumber() {
         String[] token = Token.getNextToken();
+        b=token[0];
         if (token[1].matches("Numeric")) {
             return true;
         } else {
@@ -50,18 +54,7 @@ class ExpressionParser {
         }
 
     }
-    private static boolean parseNumber1() {
-        String[] token = Token.getNextToken();
-        if (token[1].matches("Numeric")) {
-            Atom.atomList.add(token[0]);
-            Atom.atomList.add(")");
-            return true;
-        } else {
-            System.out.println("Error: Expected a numeric value but found " + token[0]);
-            return false;
-        }
 
-    }
 
     private static boolean parseArithmeticOperator() {
         String token = Token.getNextToken()[0];
