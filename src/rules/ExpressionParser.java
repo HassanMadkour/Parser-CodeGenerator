@@ -8,33 +8,37 @@ class ExpressionParser {
 
 
     static String b;
+    static String c;
+   static String t;
+    static String m;
     public static boolean isValidExpression(boolean fore) {
         Token.indexofToken--;
-        String m=Token.getNextToken()[0];
+      m  =Token.getNextToken()[0];
 
         if (fore) {
             String []t= Token.getNextToken();
             if (parseNumber()){   Token.indexofToken--; Token.indexofToken--;
-                String p="(MOV,"+m+","+b+")" ;
+                String p="(MOV,"+m+","+c+")" ;
                 Atom.atomList.add(p);
                 return match("=") && parseNumber() ;}
             Token.indexofToken--; Token.indexofToken--;
 
-            return match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber();
+            return match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber1();
         } else {
             String []t= Token.getNextToken();
             if (parseNumber()){   Token.indexofToken--; Token.indexofToken--;
-                String p="(MOV,"+m+","+b+")" ;
+                String p="(MOV,"+m+","+c+")" ;
                 Atom.atomList.add(p);
                 return match("=") && parseNumber() && match(";");}
             Token.indexofToken--; Token.indexofToken--;
-            return match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber()
+            return match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber1()
                     && match(";");
         }
     }
 
     private static boolean parseIdentifier() {
         String[] token = Token.getNextToken();
+        b=token[0];
         if (token[1].matches("Identifier")) {
             return true;
         } else {
@@ -45,7 +49,20 @@ class ExpressionParser {
 
     private static boolean parseNumber() {
         String[] token = Token.getNextToken();
-        b=token[0];
+        c=token[0];
+        if (token[1].matches("Numeric")) {
+            return true;
+        } else {
+
+            return false;
+        }
+
+    }
+    private static boolean parseNumber1() {
+        String[] token = Token.getNextToken();
+        c=token[0];
+        t=t+c+")";
+        Atom.atomList.add(t);
         if (token[1].matches("Numeric")) {
             return true;
         } else {
@@ -58,6 +75,11 @@ class ExpressionParser {
 
     private static boolean parseArithmeticOperator() {
         String token = Token.getNextToken()[0];
+        if(token.equals("+")){t="(ADD,"+m+","+b+"," ;}
+        if(token.equals("-")){t="(Sub,"+m+","+b+"," ;}
+        if(token.equals("*")){t="(MUl,"+m+","+b+"," ;}
+        if(token.equals("/")){t="(DEV,"+m+","+b+"," ;}
+
         return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
     }
 
