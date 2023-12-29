@@ -76,7 +76,7 @@ class ExpressionParser {
     private static boolean parseArithmeticOperator() {
         String token = Token.getNextToken()[0];
         if(token.equals("+")){t="(ADD,"+m+","+b+"," ;}
-        if(token.equals("-")){t="(Sub,"+m+","+b+"," ;}
+        if(token.equals("-")){t="(SUB,"+m+","+b+"," ;}
         if(token.equals("*")){t="(MUl,"+m+","+b+"," ;}
         if(token.equals("/")){t="(DEV,"+m+","+b+"," ;}
 
