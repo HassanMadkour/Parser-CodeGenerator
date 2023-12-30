@@ -16,7 +16,7 @@ class ConditionParser {
 
     public static boolean isCondition() {
         if(parseIdentifier() && parseConditionalExpression() && parseNumber())
-        { String t="(TEST,"+a+","+b+","+numbersin+","+Atom.getNextLabel()+")"  ;
+        { String t="(TST,"+a+","+b+","+numbersin+","+Atom.getNextLabel()+")"  ;
             Atom.atomList.add(t);
 
             return true;

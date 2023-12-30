@@ -1,9 +1,10 @@
-package main;
+package CodeGenerator;
 
 import java.util.Arrays;
 
 public class AtomMapperToCode {
-     public String mapAtomToCode(String atom) {
+
+    public String mapAtomToCode(String atom) {
 
         String[] fields = extractFields(atom);
 
@@ -56,7 +57,6 @@ public class AtomMapperToCode {
 
     }
 
-
     private String moveMapper(String[] fields) {
         return """
                 \tMOV %S, %S
@@ -69,6 +69,7 @@ public class AtomMapperToCode {
     }
 
     private String[] extractFields(String atoms) {
-        return Arrays.stream(atoms.substring(1, atoms.length() - 1).split(",")).map(String::trim).toArray(String[]::new);
+        return Arrays.stream(atoms.substring(1, atoms.length() - 1).split(",")).map(String::trim)
+                .toArray(String[]::new);
     }
 }

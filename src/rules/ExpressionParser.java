@@ -78,7 +78,7 @@ class ExpressionParser {
         if(token.equals("+")){t="(ADD,"+b+"," ;}
         if(token.equals("-")){t="(SUB,"+b+"," ;}
         if(token.equals("*")){t="(MUl,"+b+"," ;}
-        if(token.equals("/")){t="(DEV,"+b+"," ;}
+        if(token.equals("/")){t="(DIV,"+b+"," ;}
 
         return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
     }
