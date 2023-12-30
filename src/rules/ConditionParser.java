@@ -1,6 +1,5 @@
 package rules;
-import java.util.ArrayList;
-import java.util.List;
+
 
 import main.Token;
 import main.Atom;
