@@ -22,8 +22,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "n:/4thYear/first-Term/Compiler/project/parser/resources",
-      "program": "n:/4thYear/first-Term/Compiler/project/parser/resources/build/Debug/outDebug",
+      "cwd": "n:/4thYear/first-Term/Compiler/project/parser/Parser-CodeGenerator/Parser-CodeGenerator/resources",
+      "program": "n:/4thYear/first-Term/Compiler/project/parser/Parser-CodeGenerator/Parser-CodeGenerator/resources/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

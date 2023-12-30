@@ -15,7 +15,7 @@ public class App {
 
     public static void main(String[] args) {
         try {
-            TestAtom.Testatom();
+        
             File file = new File("resources/main.c");
             List<String> tokens = File2TokenList.convertFileToTokenList(file);
 
@@ -50,6 +50,21 @@ public class App {
             }
             fileatom.close();
             }
+                 // 
+            File atoms = new File("atoms.text");
+        List<String> codes = Generator.generateCode(atoms);
+
+        File outputs = new File("codes.txt");
+        FileWriter outputCodes = new FileWriter(outputs);
+
+        for (String code : codes) {
+            outputCodes.write(code);
+        }
+
+        outputCodes.close();
+
+
+            //
         } catch (NoSuchElementException e) {
             System.err.println(e.getMessage());
         } catch (IOException e) {
