@@ -12,13 +12,13 @@ public class File2TokenList {
             List<String> tokens = new ArrayList<>();
 
             FileReader fileReader = new FileReader(file);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line;
+            try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+                String line;
 
-            while ((line = bufferedReader.readLine()) != null) {
-                tokens.addAll(Arrays.stream(line.trim().split(" ")).toList());
+                while ((line = bufferedReader.readLine()) != null) {
+                    tokens.addAll(Arrays.stream(line.trim().split(" ")).toList());
+                }
             }
-
             return tokens;
         } catch (FileNotFoundException e) {
             System.err.println("Error: File not found.");

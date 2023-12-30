@@ -6,31 +6,39 @@ class ExpressionParser {
 
     // Constructor
 
-
     static String b;
     static String c;
-   static String t;
+    static String t;
     static String m;
+
     public static boolean isValidExpression(boolean fore) {
         Token.indexofToken--;
-      m  =Token.getNextToken()[0];
+        m = Token.getNextToken()[0];
 
         if (fore) {
-            String []t= Token.getNextToken();
-            if (parseNumber()){   Token.indexofToken--; Token.indexofToken--;
-                String p="(MOV,"+c+","+m+")" ;
+            Token.getNextToken();
+            if (parseNumber()) {
+                Token.indexofToken--;
+                Token.indexofToken--;
+                String p = "(MOV," + c + "," + m + ")";
                 Atom.atomList.add(p);
-                return match("=") && parseNumber() ;}
-            Token.indexofToken--; Token.indexofToken--;
+                return match("=") && parseNumber();
+            }
+            Token.indexofToken--;
+            Token.indexofToken--;
 
             return match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber1();
         } else {
-            String []t= Token.getNextToken();
-            if (parseNumber()){   Token.indexofToken--; Token.indexofToken--;
-                String p="(MOV,"+c+","+m+")" ;
+            Token.getNextToken();
+            if (parseNumber()) {
+                Token.indexofToken--;
+                Token.indexofToken--;
+                String p = "(MOV," + c + "," + m + ")";
                 Atom.atomList.add(p);
-                return match("=") && parseNumber() && match(";");}
-            Token.indexofToken--; Token.indexofToken--;
+                return match("=") && parseNumber() && match(";");
+            }
+            Token.indexofToken--;
+            Token.indexofToken--;
             return match("=") && parseIdentifier() && parseArithmeticOperator() && parseNumber1()
                     && match(";");
         }
@@ -38,7 +46,7 @@ class ExpressionParser {
 
     private static boolean parseIdentifier() {
         String[] token = Token.getNextToken();
-        b=token[0];
+        b = token[0];
         if (token[1].matches("Identifier")) {
             return true;
         } else {
@@ -49,7 +57,7 @@ class ExpressionParser {
 
     private static boolean parseNumber() {
         String[] token = Token.getNextToken();
-        c=token[0];
+        c = token[0];
         if (token[1].matches("Numeric")) {
             return true;
         } else {
@@ -58,10 +66,11 @@ class ExpressionParser {
         }
 
     }
+
     private static boolean parseNumber1() {
         String[] token = Token.getNextToken();
-        c=token[0];
-        t=t+c+","+m+")";
+        c = token[0];
+        t = t + c + "," + m + ")";
         Atom.atomList.add(t);
         if (token[1].matches("Numeric")) {
             return true;
@@ -72,13 +81,20 @@ class ExpressionParser {
 
     }
 
-
     private static boolean parseArithmeticOperator() {
         String token = Token.getNextToken()[0];
-        if(token.equals("+")){t="(ADD,"+b+"," ;}
-        if(token.equals("-")){t="(SUB,"+b+"," ;}
-        if(token.equals("*")){t="(MUl,"+b+"," ;}
-        if(token.equals("/")){t="(DIV,"+b+"," ;}
+        if (token.equals("+")) {
+            t = "(ADD," + b + ",";
+        }
+        if (token.equals("-")) {
+            t = "(SUB," + b + ",";
+        }
+        if (token.equals("*")) {
+            t = "(MUl," + b + ",";
+        }
+        if (token.equals("/")) {
+            t = "(DIV," + b + ",";
+        }
 
         return token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/");
     }

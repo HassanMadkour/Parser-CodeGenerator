@@ -19,19 +19,20 @@ public class App {
             List<String> tokens = File2TokenList.convertFileToTokenList(file);
 
             File TokenWithType = new File("resources/TokenWithType.txt");
-            FileWriter fileWriter = new FileWriter(TokenWithType);
+            try (FileWriter fileWriter = new FileWriter(TokenWithType)) {
+                for (String iterator : tokens) {
+                    String checkedTokenResult = TokenMapper.checkToken(iterator).orElse("");
+                    if (checkedTokenResult.isEmpty()) {
+                        throw new NoSuchElementException("This token not in language: %s".formatted(iterator));
 
-            for (String iterator : tokens) {
-                String checkedTokenResult = TokenMapper.checkToken(iterator).orElse("");
-                if (checkedTokenResult.isEmpty()) {
-                    throw new NoSuchElementException("This token not in language: %s".formatted(iterator));
-
-                } else {
-                    fileWriter.write("%s %s\n".formatted(iterator, checkedTokenResult));
+                    } else {
+                        fileWriter.write("%s %s\n".formatted(iterator, checkedTokenResult));
+                    }
                 }
+
+                fileWriter.close();
             }
 
-            fileWriter.close();
             File tokenFile = new File("resources/TokenWithType.txt");
             File atomFile = new File("resources/atoms.txt");
             FileWriter fileatom = new FileWriter(atomFile);

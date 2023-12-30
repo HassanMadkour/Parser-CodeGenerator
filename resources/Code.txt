@@ -1,9 +1,9 @@
-	MOV 10, A
-	MOV 11, B
-	MOV 6, X
-	MOV 8, W
-	MOV 4, M
-	MOV 3, N
+	MOV A, 10
+	MOV B, 11
+	MOV X, 6
+	MOV W, 8
+	MOV M, 4
+	MOV N, 3
 	LOD R1, A
 	CMP R1, 12, 5
 	JMP L0
@@ -20,10 +20,10 @@ L2:	LOD R1, X
 	JMP L3
 	CMP 0, 0, 0
 	JMP L4
-L3:	MOV 4, X
+L3:	MOV X, 4
 	CMP 0, 0, 0
 	JMP L2
-L4:	MOV 4, X
+L4:	MOV X, 4
 L5:	LOD R1, X
 	CMP R1, 6, 5
 	JMP L6
@@ -32,7 +32,7 @@ L5:	LOD R1, X
 L6:	LOD R1, A
 	SUB R1, 8
 	STO R1, X
-	MOV 1, A
+	MOV A, 1
 	CMP 0, 0, 0
 	JMP L5
 L7:	LOD R1, M

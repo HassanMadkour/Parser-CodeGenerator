@@ -16,13 +16,13 @@ public class Generator {
             List<String> codes = new ArrayList<>();
 
             FileReader fileReader = new FileReader(atomsFile);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String atom;
+            try (BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+                String atom;
 
-            while ((atom = bufferedReader.readLine()) != null) {
-                codes.add(mapperToCode.mapAtomToCode(atom.trim()));
+                while ((atom = bufferedReader.readLine()) != null) {
+                    codes.add(mapperToCode.mapAtomToCode(atom.trim()));
+                }
             }
-
             return codes;
 
         } catch (FileNotFoundException e) {
