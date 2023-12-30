@@ -18,7 +18,7 @@ class ExpressionParser {
         if (fore) {
             String []t= Token.getNextToken();
             if (parseNumber()){   Token.indexofToken--; Token.indexofToken--;
-                String p="(MOV,"+m+","+c+")" ;
+                String p="(MOV,"+c+","+m+")" ;
                 Atom.atomList.add(p);
                 return match("=") && parseNumber() ;}
             Token.indexofToken--; Token.indexofToken--;
@@ -27,7 +27,7 @@ class ExpressionParser {
         } else {
             String []t= Token.getNextToken();
             if (parseNumber()){   Token.indexofToken--; Token.indexofToken--;
-                String p="(MOV,"+m+","+c+")" ;
+                String p="(MOV,"+c+","+m+")" ;
                 Atom.atomList.add(p);
                 return match("=") && parseNumber() && match(";");}
             Token.indexofToken--; Token.indexofToken--;
