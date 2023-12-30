@@ -7,7 +7,7 @@ class VariableDefinitionParser {
 
     public static boolean isValidVariableDefinition() {
         if( parseIdentifier() && parseInitialization() && match(";"))
-        {  String r="(MOV,"+a+","+b+")";
+        {  String r="(MOV,"+b+","+a+")";
             Atom.atomList.add(r);
 
 
