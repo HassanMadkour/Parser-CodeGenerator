@@ -60,7 +60,7 @@ public class AtomMapperToCode {
     private String moveMapper(String[] fields) {
         return """
                 \tMOV %S, %S
-                """.formatted(fields[1], fields[2]);
+                """.formatted(fields[2], fields[1]);
 
     }
 
